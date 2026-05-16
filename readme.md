@@ -2,18 +2,6 @@
 
 AI powered Scam and Deepfake Detection SaaS platform with full-stack architecture.
 
-## Project Structure
-
-```
-cyberrakshak-ai/
-+-- frontend/      # React + Vite + Tailwind + Framer Motion
-+-- backend/       # Express + MongoDB + JWT + Multer
-+-- ai-engine/     # FastAPI + AI analysis modules
-+-- docs/          # documentation/screenshots
-+-- docker-compose.yml
-+-- README.md
-```
-
 ## Features
 
 - JWT authentication and protected routes
@@ -33,70 +21,6 @@ cyberrakshak-ai/
 - AI Engine: FastAPI, TensorFlow, OpenCV, EasyOCR, Scikit-learn, librosa (with lightweight placeholder inference)
 - Database: MongoDB Atlas
 
-## Local Setup
-
-### 1) Clone and open
-
-```bash
-cd cyberrakshak-ai
-```
-
-### 2) Backend env
-
-Create `backend/.env` from template:
-
-```env
-PORT=5000
-MONGODB_URI=mongodb+srv://<user>:<pass>@cluster.mongodb.net/cyberrakshak
-JWT_SECRET=replace_with_secure_secret
-AI_ENGINE_URL=http://localhost:8000
-CLIENT_URL=http://localhost:5173
-```
-
-### 3) Install dependencies
-
-```bash
-cd frontend && npm install
-cd ../backend && npm install
-cd ../ai-engine && pip install -r requirements.txt
-```
-
-### 4) Run services
-
-Terminal 1:
-```bash
-cd ai-engine
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
-```
-
-Terminal 2:
-```bash
-cd backend
-npm run dev
-```
-
-Terminal 3:
-```bash
-cd frontend
-npm run dev
-```
-
-## Docker Compose
-
-```bash
-docker compose up --build
-```
-
-## API Routes
-
-- `POST /api/auth/register`
-- `POST /api/auth/login`
-- `POST /api/url-scan`
-- `POST /api/sms-scan`
-- `POST /api/screenshot`
-- `POST /api/deepfake`
-- `POST /api/audio-scan`
-- `GET /api/reports`
 
 ## Deployment
 
@@ -117,21 +41,3 @@ docker compose up --build
 4. Backend validates, rate-limits, stores data in MongoDB, calls FastAPI AI service.
 5. AI result returned, persisted as scans/reports/threat logs.
 6. Dashboard and reports read persisted history.
-
-## Screenshots Placeholders
-
-Add screenshots in `docs/screenshots`:
-
-- `landing.png`
-- `dashboard.png`
-- `url-scan.png`
-- `sms-scan.png`
-- `screenshot-detect.png`
-- `deepfake-detect.png`
-- `voice-detect.png`
-- `reports.png`
-
-## Notes
-
-- Current AI endpoints use production-ready service interfaces with lightweight placeholder scoring logic.
-- Replace heuristics with trained TensorFlow/scikit models without changing API contracts.
