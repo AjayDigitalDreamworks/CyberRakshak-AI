@@ -1,0 +1,5 @@
+export const demoUsers = []
+export const demoScans = []
+export const demoReports = []
+export const demoThreatLogs = []
+export const demoSettings = []
